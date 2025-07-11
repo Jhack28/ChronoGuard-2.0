@@ -29,6 +29,7 @@ function Login({ show, onClose }) {
       try {
         data = text ? JSON.parse(text) : {};
         console.log("JSON parseado:", data); // 👈 añade esto
+      // eslint-disable-next-line no-unused-vars
       } catch (parseError) {
         setError('Respuesta inválida del servidor');
         setSuccessMessage('');
