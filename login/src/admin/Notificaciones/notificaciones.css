@@ -1,0 +1,27 @@
+.contenedor{
+  --s: 198px; /* control the size*/
+  --c1: #a3c2b5;
+  --c2: #3d525c;
+  --c3: #ffffff;
+  
+  background:
+    repeating-conic-gradient(from 30deg,#0000 0 120deg,var(--c3) 0 50%) 
+     calc(var(--s)/2) calc(var(--s)*tan(30deg)/2),
+    repeating-conic-gradient(from 30deg,var(--c1) 0 60deg,var(--c2) 0 120deg,var(--c3) 0 50%);
+  background-size: var(--s) calc(var(--s)*tan(30deg));
+  
+  display: grid;
+  grid: column 6px;
+  
+}
+
+
+table 
+{
+    margin-bottom: 5px;
+    margin-left: 0;
+    height: auto;
+    width: 100%;
+    background: #9ebbaf;
+    border: 4px solid #032c5a;
+}

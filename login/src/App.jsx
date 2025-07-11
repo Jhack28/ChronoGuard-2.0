@@ -28,7 +28,7 @@ function App() {
         <Route path="/empleado/solicitudes" element={<Solicitudes />} />
         <Route path="/empleado/horarios" element={<Horarios />} />
         <Route path="/empleado/turnos" element={<Turnos />} />
-        <Route path="/empleado/notificaciones" element={<Notificaciones />} />
+        <Route path="/empleado/notificaciones" element={<Notificaciones/>} />
       </Routes>
     </Router>
   );

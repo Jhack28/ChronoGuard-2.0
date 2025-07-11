@@ -5,6 +5,7 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useNavigate } from "react-router-dom";
 
+
 // Función para mostrar el texto del rol
 function getRolTexto(rol) {
   if (rol === 2 || rol === "2" || rol === "Secretaria") return "Secretaria";
@@ -272,7 +273,7 @@ const eliminarEmpleado = (id) => {
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav ms-auto">
               <li className="nav-item">
-                <a className="nav-link" href="#notificacionesEmpleados">
+                <a className="nav-link" href="/notificaciones">
                   <i className="fas fa-bell"></i>
                 </a>
               </li>
