@@ -89,21 +89,18 @@ function Index() {
           nombre: u.Nombre,
           email: u.Correo,
           rol: u.Rol,
-          departamento: u.Departamento || '', // Ahora será el nombre textual
+          departamento: u.Departamento || '',
+          Estado: u.Estado || '' // Ahora será el nombre textual
         }))
       );
-
     } catch (error) {
       alert("Error al obtener usuarios: " + error.message);
     }
   };
-
-
-
   // Cargar usuarios al montar el componente
-  useEffect(() => {
-    fetchUsuarios();
-  }, []);
+      useEffect(() => {
+        fetchUsuarios();
+    }, []);
 
   // --- FUNCIONES DE EMPLEADOS ---
   const handleChange = (e) => {
@@ -215,13 +212,18 @@ function Index() {
 const eliminarEmpleado = async (id) => {
   if (window.confirm("¿Está seguro de inactivar este empleado?")) {
     try {
+      console.log("ID que se va a inactivar:", id);
       // Cambia el estado en la base de datos
       const response = await fetch(`http://localhost:5170/usuarios/inactivar/${id}`, {
-        method: "PUT"
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ id })
       });
       if (response.ok) {
         // Elimina visualmente del frontend
         setEmpleados(prevEmpleados => prevEmpleados.filter(emp => emp.id !== id));
+        alert("Usuario inactivado exitosamente");
+        //actualiza la lista de empleados
       } else {
         alert("Error al inactivar usuario");
       }

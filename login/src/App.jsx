@@ -7,7 +7,6 @@ import Horarios from "./empleado/pages/Horarios";
 import NotificationsPanel from "./admin/Notificaciones/notificaicones";
 import './admin/Notificaciones/notificaciones.css'
 import AdminIndex from './admin/jsx/index';
-import SecretariaPanel from "./secretaria/secretariapanel";
 import Login from './components/jsx/login';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -24,7 +23,6 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/admin" element={<AdminIndex />} />
-        <Route path="/secretaria" element={<SecretariaPanel />} />
 
         {/* Panel de Usuario */}
         <Route path="/empleado" element={<DashboardUsuario />} />
