@@ -11,9 +11,9 @@ app.use(bodyParser.json());
 
 // Configuración de MySQL
 const pool = mysql.createPool({
-    host: process.env.DB_HOST || 'localhost',
+    host: process.env.DB_HOST || '127.0.0.1',
     user: process.env.DB_USER || 'root',
-    password: process.env.DB_PASSWORD || 'SENA123',
+    password: process.env.DB_PASSWORD || '1234',
     database: process.env.DB_NAME || 'ChronoDB_db',
     waitForConnections: true,
     connectionLimit: 10,
@@ -72,10 +72,10 @@ app.get('/empleado/solicitudes/:id', async (req, res) => {
         const [rows] = await pool.execute(
             `SELECT tp.tipo, tp.mensaje, tp.Fecha_Solicitud, tp.ID_Usuario, tp.id_departamento, tp.ID_tipoPermiso,
                     'Pendiente' AS estado, d.tipo AS departamento
-             FROM TipoPermiso tp
-             LEFT JOIN Departamento d ON tp.id_departamento = d.id_departamento
-             WHERE tp.ID_Usuario = ?
-             ORDER BY tp.Fecha_Solicitud DESC`,
+            FROM TipoPermiso tp
+            LEFT JOIN Departamento d ON tp.id_departamento = d.id_departamento
+            WHERE tp.ID_Usuario = ?
+            ORDER BY tp.Fecha_Solicitud DESC`,
             [id]
         );
         res.json(rows);
@@ -223,8 +223,8 @@ app.post('/login', async (req, res) => {
 
         const [rows] = await pool.execute(
             `SELECT u.ID_Usuario, u.Nombre, u.Correo, u.Contraseña, u.Numero_de_Documento, u.ID_Rol AS Rol
-             FROM Usuarios u
-             WHERE u.Correo = ?`,
+                FROM Usuarios u
+                WHERE u.Correo = ?`,
             [email]
         );
 

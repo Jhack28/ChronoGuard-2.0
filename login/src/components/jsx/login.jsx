@@ -53,7 +53,9 @@ function Login({ show, onClose }) {
         navigate('/admin');
       } else if (data.rol === 'empleado') {
         navigate('/empleado');
-      } else {
+      } else if (data.rol === 'secretaria') {
+        navigate('/secretaria');
+      }else {
         setError('Rol no reconocido');
       }
 
