@@ -11,9 +11,9 @@
 
 // Configuración de MySQL
 const pool = mysql.createPool({
-    host: process.env.DB_HOST || '127.0.0.1',
+    host: process.env.DB_HOST || 'lOCALHOST',
     user: process.env.DB_USER || 'root',
-    password: process.env.DB_PASSWORD || '1234',
+    password: process.env.DB_PASSWORD || 'SENA123',
     database: process.env.DB_NAME || 'ChronoDB_db',
     waitForConnections: true,
     connectionLimit: 10,

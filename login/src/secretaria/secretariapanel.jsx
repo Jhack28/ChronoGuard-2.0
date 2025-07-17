@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import logoCHG from '../components/img/logoCHGcircul.png';
 import '@fortawesome/fontawesome-free/css/all.min.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import { useNavigate } from "react-router-dom";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function SecretariaPanel() {
   const [empleados, setEmpleados] = useState([]);
